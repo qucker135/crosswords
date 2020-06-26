@@ -112,6 +112,7 @@ void gen(vector<Record>& rl,vector<Rules> rlz,int rozmiarX,int rozmiarY,int pozi
 						}	
 					}
 				}
+				cerr<<bfr<<endl;
 
 				if(czySpelnia){
 					rl[q].setContent(bfr);
@@ -139,7 +140,7 @@ int main(){
 	recordList.push_back(Record(1,4,COLUMN,4,"aaaa"));	//Z4	7
 	*/
 	//TEST2 - pusto
-	
+	/*
 	recordList.push_back(Record(1,0,ROW,5,""));	//N1	0
 	recordList.push_back(Record(2,1,ROW,4,""));	//N2	1
 	recordList.push_back(Record(3,2,ROW,3,""));	//N3	2
@@ -148,12 +149,34 @@ int main(){
 	recordList.push_back(Record(1,2,COLUMN,4,""));	//Z2	5
 	recordList.push_back(Record(0,3,COLUMN,5,""));	//Z3	6
 	recordList.push_back(Record(1,4,COLUMN,4,""));	//Z4	7
+	*/
+	//TEST3 - nie uzywac, nie jest dobry
+	/*
+	recordList.push_back(Record(1,0,ROW,5,""));
+	recordList.push_back(Record(0,1,COLUMN,3,""));
+	recordList.push_back(Record(1,2,COLUMN,4,""));
+	recordList.push_back(Record(0,3,COLUMN,5,""));
+	recordList.push_back(Record(1,4,COLUMN,4,""));
+	recordList.push_back(Record(2,1,ROW,4,""));
+	recordList.push_back(Record(3,2,ROW,3,""));
+	recordList.push_back(Record(4,0,ROW,5,""));
+	*/
 	
+	//TEST4
+	
+	recordList.push_back(Record(0,1,COLUMN,5,""));
+	recordList.push_back(Record(1,2,COLUMN,4,""));
+	recordList.push_back(Record(0,3,COLUMN,5,""));
+	recordList.push_back(Record(1,4,COLUMN,4,""));
+	recordList.push_back(Record(1,1,ROW,4,""));
+	recordList.push_back(Record(2,0,ROW,5,""));
+	recordList.push_back(Record(3,1,ROW,4,""));
+	recordList.push_back(Record(4,0,ROW,5,""));
 	
 	vector<Rules> rulesList;
 	//TEST1 / TEST2
 	
-	rulesList.push_back(Rules(0,1,4,1));
+	/*rulesList.push_back(Rules(0,1,4,1));
 	rulesList.push_back(Rules(1,0,4,2));
 	rulesList.push_back(Rules(0,2,5,0));
 	rulesList.push_back(Rules(1,1,5,1));
@@ -167,11 +190,48 @@ int main(){
 	rulesList.push_back(Rules(1,3,7,1));
 	rulesList.push_back(Rules(2,2,7,2));
 	rulesList.push_back(Rules(3,4,7,3));
-		
+	*/	
 	//wypisz(rozmiarX,rozmiarY,recordList);
 
-	
+	//TEST3 - wcale nie zoptymalizowany mylilem sie :P
+	/*
+	rulesList.push_back(Rules(0,1,1,1));
+	rulesList.push_back(Rules(0,2,2,0));
+	rulesList.push_back(Rules(0,3,3,1));
+	rulesList.push_back(Rules(0,4,4,0));
+	rulesList.push_back(Rules(5,0,1,2));
+	rulesList.push_back(Rules(5,1,2,1));
+	rulesList.push_back(Rules(5,2,3,2));
+	rulesList.push_back(Rules(5,3,4,1));
+	rulesList.push_back(Rules(6,0,2,2));
+	rulesList.push_back(Rules(6,1,3,3));
+	rulesList.push_back(Rules(6,2,4,2));
+	rulesList.push_back(Rules(7,2,2,3));
+	rulesList.push_back(Rules(7,3,3,4));
+	rulesList.push_back(Rules(7,4,4,3));
+	*/
 
+	//TEST4
+	
+	rulesList.push_back(Rules(0,1,4,0));
+	rulesList.push_back(Rules(1,0,4,1));
+	rulesList.push_back(Rules(2,1,4,2));
+	rulesList.push_back(Rules(3,0,4,3));
+	rulesList.push_back(Rules(0,2,5,1));
+	rulesList.push_back(Rules(1,1,5,2));
+	rulesList.push_back(Rules(2,2,5,3));
+	rulesList.push_back(Rules(3,1,5,4));
+	rulesList.push_back(Rules(0,3,6,0));
+	rulesList.push_back(Rules(1,2,6,1));
+	rulesList.push_back(Rules(2,3,6,2));
+	rulesList.push_back(Rules(3,2,6,3));
+	rulesList.push_back(Rules(0,4,7,1));
+	rulesList.push_back(Rules(1,3,7,2));
+	rulesList.push_back(Rules(2,4,7,3));
+	rulesList.push_back(Rules(3,3,7,4));
+
+
+	
 	gen(recordList,rulesList,rozmiarX,rozmiarY);
 
 	return 0;
