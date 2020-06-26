@@ -139,7 +139,7 @@ int main(){
 	recordList.push_back(Record(1,4,COLUMN,4,"aaaa"));	//Z4	7
 	*/
 	//TEST2 - pusto
-	/*
+	
 	recordList.push_back(Record(1,0,ROW,5,""));	//N1	0
 	recordList.push_back(Record(2,1,ROW,4,""));	//N2	1
 	recordList.push_back(Record(3,2,ROW,3,""));	//N3	2
@@ -148,22 +148,11 @@ int main(){
 	recordList.push_back(Record(1,2,COLUMN,4,""));	//Z2	5
 	recordList.push_back(Record(0,3,COLUMN,5,""));	//Z3	6
 	recordList.push_back(Record(1,4,COLUMN,4,""));	//Z4	7
-	*/
-	//TEST3 - action! - TEST2, ale zoptymalizowany
 	
-	recordList.push_back(Record(1,0,ROW,5,""));
-	recordList.push_back(Record(0,1,COLUMN,3,""));
-	recordList.push_back(Record(1,2,COLUMN,4,""));
-	recordList.push_back(Record(0,3,COLUMN,5,""));
-	recordList.push_back(Record(1,4,COLUMN,4,""));
-	recordList.push_back(Record(2,1,ROW,4,""));
-	recordList.push_back(Record(3,2,ROW,3,""));
-	recordList.push_back(Record(4,0,ROW,5,""));
-
 	
 	vector<Rules> rulesList;
 	//TEST1 / TEST2
-	/*
+	
 	rulesList.push_back(Rules(0,1,4,1));
 	rulesList.push_back(Rules(1,0,4,2));
 	rulesList.push_back(Rules(0,2,5,0));
@@ -178,24 +167,9 @@ int main(){
 	rulesList.push_back(Rules(1,3,7,1));
 	rulesList.push_back(Rules(2,2,7,2));
 	rulesList.push_back(Rules(3,4,7,3));
-	*/	
+		
 	//wypisz(rozmiarX,rozmiarY,recordList);
 
-	//TEST3
-	rulesList.push_back(Rules(0,1,1,1));
-	rulesList.push_back(Rules(0,2,2,0));
-	rulesList.push_back(Rules(0,3,3,1));
-	rulesList.push_back(Rules(0,4,4,0));
-	rulesList.push_back(Rules(5,0,1,2));
-	rulesList.push_back(Rules(5,1,2,1));
-	rulesList.push_back(Rules(5,2,3,2));
-	rulesList.push_back(Rules(5,3,4,1));
-	rulesList.push_back(Rules(6,0,2,2));
-	rulesList.push_back(Rules(6,1,3,3));
-	rulesList.push_back(Rules(6,2,4,2));
-	rulesList.push_back(Rules(7,2,2,3));
-	rulesList.push_back(Rules(7,3,3,4));
-	rulesList.push_back(Rules(7,4,4,3));
 	
 
 	gen(recordList,rulesList,rozmiarX,rozmiarY);
