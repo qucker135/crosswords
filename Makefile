@@ -1,4 +1,4 @@
-OUTPUT = results.txt
+OUTPUT = output.txt
 CC = g++
 EXE = crosswords
 
